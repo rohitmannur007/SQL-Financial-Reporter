@@ -1,4 +1,4 @@
-# 🏦 Advanced SQL Financial Intelligence Platform
+# SQL Financial Intelligence Platform
 
 An end-to-end **SQL-centric financial analytics platform** that simulates how modern banking systems generate regulatory and business intelligence reports.
 

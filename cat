@@ -1,0 +1,25 @@
+WITH cleaned AS (
+    SELECT
+        COALESCE(CAST(CustAccountBalance AS REAL), 0) AS balance,
+        COALESCE(CAST(TransactionAmount AS REAL), 0) AS txn
+    FROM transactions
+)
+
+SELECT
+    'Total Assets' AS Category,
+    SUM(balance + txn) AS Amount
+FROM cleaned
+
+UNION ALL
+
+SELECT
+    'Total Liabilities' AS Category,
+    SUM(balance) AS Amount
+FROM cleaned
+
+UNION ALL
+
+SELECT
+    'Equity' AS Category,
+    SUM(txn) AS Amount
+FROM cleaned;
